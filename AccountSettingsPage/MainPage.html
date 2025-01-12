@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Account Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/FinalProject/styles/menus.css">
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg nav-underline">
+        <div class="container-fluid">
+            <a href="/FinalProject/HomePage/HomePage.html">
+                <img src="/FinalProject/HomePage/imgs/supermarket.png" alt="Bootstrap" width="45" height="35">
+            </a>
+            <div class="navbar-collapse">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/FinalProject/HomePage/HomePage.html">Home</a>
+                    <a class="nav-link" href="/FinalProject/ImportPage/Import.php">Import</a>
+                    <a class="nav-link" href="/FinalProject/ExportPage/ExportPage.html">Export</a>
+                    <a class="nav-link" href="/FinalProject/Branches/main.html">Branches</a>
+                    <a class="nav-link" href="/FinalProject/StatsPage/StatsPage.php">Statistics</a>
+                    <a class="nav-link" href="/FinalProject/SearchPage/main.html">Search</a>
+                    <a class="nav-link" href="/FinalProject/AccountSettingsPage/MainPage.html">Account</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!--header-->
+        <div class="company-header">
+            <h1>Account Settings</h1>
+        </div>
+
+        <!--Edit account-->
+        <div class="row g-5 justify-content-center">
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="account_settings.php" class="btn btn-custom">
+                    <img src="imgs/edit-info.png" alt="Image 1">
+                    <span>Edit Account Information</span>
+                </a>
+            </div>
+
+            <!--log out-->
+            <div class="col-12 col-sm-6 col-md-4">
+                <a href="/FinalProject/LogInPage/login.php" class="btn btn-custom">
+                    <img src="imgs/logout.png" alt="Image 2">
+                    <span>Log Out</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

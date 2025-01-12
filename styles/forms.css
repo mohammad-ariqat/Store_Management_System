@@ -1,0 +1,87 @@
+body {
+    background-color: #f0f4f8;
+}
+
+/* Form div */
+.form1 {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* Form layout using flex */
+.form1 form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form hh2 */
+.form1 h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+/* Label styling */
+.form1 label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Input field styling */
+.form1 input {
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid lightblue;
+    border-radius: 6px;
+}
+
+/* Input focus: when the user clicks on the input*/
+.form1 input:focus {
+    border-color: blue;
+    outline: none;
+}
+
+/* Submit btn */
+.form1 input[type="submit"] {
+    background-color: blue;
+    color: white;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Submit btn hover*/
+.form1 input[type="submit"]:hover {
+    background-color: darkblue;
+}
+
+/* Link styling */
+.form1 a {
+    text-decoration: none;
+    color: blue;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* Center links */
+.form-links {
+    text-align: center;
+}
+
+/* Link hover */
+.form1 a:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+nav{
+    background-color: lightgray;
+
+    font-size: 17px;
+}
+
+/*EZ ;)*/

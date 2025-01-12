@@ -1,0 +1,108 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbName = "mydb102";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbName);
+    
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }else{
+    
+    $sql = "SELECT * FROM branches";
+
+    $result = mysqli_query($conn, $sql);
+?>
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Edit Branch</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="/FinalProject/styles/menus.css">
+        </head>
+        <body>
+             <!--Nav Bar-->
+            <nav class="navbar navbar-expand-lg nav-underline">
+                <div class="container-fluid">
+                    <a href="/FinalProject/HomePage/HomePage.html">
+                        <img src="/FinalProject/HomePage/imgs/supermarket.png" alt="Bootstrap" width="45" height="35">
+                    </a>
+                    <div class="navbar-collapse">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="/FinalProject/HomePage/HomePage.html">Home</a>
+                            <a class="nav-link" href="/FinalProject/ImportPage/Import.php">Import</a>
+                            <a class="nav-link" href="/FinalProject/ExportPage/ExportPage.html">Export</a>
+                            <a class="nav-link" href="/FinalProject/Branches/main.html">Branches</a>
+                            <a class="nav-link" href="/FinalProject/StatsPage/StatsPage.php">Statistics</a>
+                            <a class="nav-link" href="/FinalProject/SearchPage/main.html">Search</a>
+                            <a class="nav-link" href="/FinalProject/AccountSettingsPage/MainPage.html">Account</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="container">
+                <div class="company-header">
+                    <h1>Edit Branch</h1>
+                </div>
+            </div>
+
+            <div class="container my-4">
+                <table class="table table-bordered table-hover">
+                    <!--table head-->
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Branch Name</th>
+                            <th>Location</th>
+                            <th>Phone</th>
+                            <th>Save edit</th>
+                        </tr>
+                    </thead>
+                    <!--table body-->
+                    <tbody>
+                        <!--php while loop to loop throgh each Branch-->
+                        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                            <form action="<?php echo htmlspecialchars("EditBranchDB.php"); ?>" method="post">
+                                <tr>
+                                    <td>
+                                        <input type="text" name="BranchId" readonly value="<?php echo $row['id']; ?>" >
+                                    </td>
+                                    
+                                    <td>
+                                        <input type="text" name="BranchName" value="<?php echo htmlspecialchars($row['Name']); ?>" >
+                                    </td>
+                                    
+                                    <td>
+                                        <input type="text" name="Location" value="<?php echo htmlspecialchars($row['Location']); ?>" >
+                                    </td>
+                                    
+                                    <td>
+                                        <input type="text" name="Phone" value="<?php echo htmlspecialchars($row['Phone']); ?>" >
+                                    </td>
+                                    
+                                    <td>
+                                        <input type="submit" value="Save">
+                                    </td>
+                                </tr>
+                            </form>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </html>
+
+    <?php
+    }
+    // Close the connection
+    mysqli_close($conn);
+    ?>
+
